@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-openai-green {
+  background-color: #74aa9c;
+  color: #fff;
+  border: #74aa9c;
+}
+.btn-openai-green:hover {
+  background-color: #619386;
+}
+.btn-claude-orange {
+  background-color: #da7756;
+  color: #000;
+  border: #da7756;
+}
+.btn-claude-orange:hover {
+  background-color: #b36146;
+}
+.text-openai-green {
+  color: #74aa9c;
+}
+.text-claude-orange {
+  color: #da7756;
+}

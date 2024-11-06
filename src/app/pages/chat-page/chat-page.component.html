@@ -1,0 +1,57 @@
+<div class="w-full md:w-8/12 min-h-screen mx-auto flex flex-col">
+  <div class="flex-grow p-4 overflow-y-auto" #chatContainer>
+    @for(message of conversationHistory; track message) {
+    <div
+      [ngClass]="{
+        'chat chat-start': message.role === 'assistant',
+        'chat chat-end': message.role === 'user'
+      }"
+    >
+      <div
+        class="chat-bubble whitespace-pre-wrap"
+        [ngClass]="{
+          'bg-[#dddcdc] text-black': message.role == 'user',
+          'bg-[#7489aa] text-white': message.role == 'assistant'
+        }"
+      >
+        {{ message.content }}
+      </div>
+    </div>
+    }
+  </div>
+  <div class="sticky bottom-0 w-full p-4">
+    <form class="flex items-center gap-2 p-4" (submit)="onSendMessage()">
+      @for(provider of getProviders(); track provider) {
+      <label
+        for="main-drawer"
+        class="btn btn-ghost"
+        [ngClass]="{ 'btn-active': provider.name == currentProvider?.name }"
+        (click)="changeProvider(provider.name)"
+      >
+        <!-- <span
+          [ngClass]="provider.iconClasses"
+          style="width: 32px; height: 32px"
+        ></span> -->
+        {{ provider.name }}
+      </label>
+      }
+      <select
+        class="select select-bordered max-w-xs rounded-2xl"
+        [(ngModel)]="selectedModel"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        @for(model of currentProvider?.availableModels; track model) {
+        <option>{{ model }}</option>
+        }
+      </select>
+      <input
+        type="text"
+        [(ngModel)]="message"
+        name="message"
+        class="input rounded-2xl flex-grow bg-gray-200"
+        placeholder="Type your message here..."
+      />
+      <button type="submit" class="btn btn-primary rounded-2xl">Send</button>
+    </form>
+  </div>
+</div>

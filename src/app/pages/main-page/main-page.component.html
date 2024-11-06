@@ -1,0 +1,21 @@
+<div class="hero min-h-screen">
+  <div class="hero-content text-center bg-base-300 rounded-md">
+    <div class="max-w-xl">
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">
+        This is a very simple page that made fot the home task for Prompt
+        Security. Choose one of the following options to start chatting.
+      </p>
+      <div class="flex flex-row justify-center gap-2">
+        @for(provider of providerList; track provider.name) {
+        <button
+          [ngClass]="provider.buttonClasses"
+          (click)="onProviderSelect(provider.name)"
+        >
+          Start Chatting with {{ provider.name }}
+        </button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
