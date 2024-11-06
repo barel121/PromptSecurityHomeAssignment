@@ -1,27 +1,66 @@
-# PromptSecTaskClient
+# Prompt Security Home Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## Project Description
 
-## Development server
+Web application developed in Angular that provides an interactive interface for users to create and manage conversations with multiple providers.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Create and manage multiple chats with different chat providers.
+- Save chat conversations locally for future reference.
+- Clean and responsive UI using Tailwind CSS and DaisyUI.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+To get started with the project, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the repository**
 
-## Running unit tests
+   ```sh
+   git clone https://github.com/barel121/PromptSecurityHomeAssignment.git
+   cd PromptSecurityHomeAssignment
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install dependencies**
+   Make sure you have [Node.js](https://nodejs.org/) installed. Then, run:
 
-## Running end-to-end tests
+   ```sh
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Set up environment variables**
+   The project uses Angular's environment management system to manage API keys and other sensitive data.
+   Update the `environment.ts` and `environment.prod.ts` files under the `src/environments` directory with your API keys. An example `environment.ts` file might look like:
 
-## Further help
+   ```typescript
+   export const environment = {
+     production: false,
+     anthropicAPIKey: "your_anthropic_api_key_here",
+     openAiAPIKey: "your_openai_api_key_here",
+   };
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. **Run the application**
+   To start the development server, use the following command:
+   ```sh
+   npm start
+   ```
+   The application will be running at `http://localhost:4200`.
+
+## Technologies Used
+
+- **Angular 18**: The core framework used to build the front end.
+- **Tailwind CSS & DaisyUI**: For a clean and modern user interface.
+- **LocalStorage**: For persisting chat data across user sessions.
+- **Iconify**: For adding icons to the UI.
+
+## Development Notes
+
+- Ensure you have Angular CLI installed globally for easier development.
+  ```sh
+  npm install -g @angular/cli
+  ```
+- For contributing to the project, make sure to follow the style guide and run lint checks before pushing code.
+  ```sh
+  npm run lint
+  ```

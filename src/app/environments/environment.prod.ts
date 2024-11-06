@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  anthropicAPIKey: "ANTHROPIC_API_KEY",
-  openAiAPIKey: "OPENAI_API_KEY",
+  anthropicAPIKey: "your_anthropic_api_key_here",
+  openAiAPIKey: "your_openai_api_key_here",
 };
