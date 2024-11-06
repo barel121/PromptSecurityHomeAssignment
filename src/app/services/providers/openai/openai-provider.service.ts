@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Provider } from "@services/providers/provider.interface";
+import { Provider } from "../provider.interface";
 import { environment } from "@environments/environment";
 
 @Injectable({
@@ -44,7 +44,6 @@ export class OpenaiProviderService implements Provider {
     const reader = response.body.getReader();
     const decoder = new TextDecoder("utf-8");
     let buffer = "";
-
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;

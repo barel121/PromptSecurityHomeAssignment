@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Provider } from "@services/providers/provider.interface";
+import { Provider } from "../provider.interface";
 import { environment } from "@environments/environment";
 
 @Injectable({
